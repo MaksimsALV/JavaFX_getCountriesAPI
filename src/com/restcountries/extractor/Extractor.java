@@ -16,7 +16,7 @@ public class Extractor {
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String date = LocalDateTime.now().format(dateFormat);
         String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH-mm-ss"));
-        Path outputPath = Path.of(System.getProperty("user.home"), "IdeaProjects", "JavaFX_getCountriesAPI", "files", "OUTPUT_" + date + "_" + timeStamp + ".txt");
+        Path outputPath = Path.of(System.getProperty("user.home"), "IdeaProjects", "JavaFX_getCountriesAPI", "files", "OUTPUT_" + date + "_" + timeStamp + ".json");
 
         try (BufferedWriter writer = Files.newBufferedWriter(outputPath, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
                 writer.write(responseBody);
