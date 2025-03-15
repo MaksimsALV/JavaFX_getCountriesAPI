@@ -9,16 +9,13 @@ import java.net.http.HttpResponse;
 
 public class API {
 
-    private final HttpClient httpClient = HttpClient.newHttpClient();
-    public String endpointURL = "https://restcountries.com/v3.1/name/latvia"; //todo variable in country
-    public String getRequestHeader = "Content-Type";
-    public String getRequestHeaderValue = "application/json";
-
     public void getRequest() {
+        HttpClient httpClient = HttpClient.newHttpClient();
+        String endpointURL = "https://restcountries.com/v3.1/name/Latvia"; //todo variable in country
+        //https://restcountries.com/v3.1/capital/{capital} //todo need to add this later
 
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(URI.create(endpointURL))
-                .header(getRequestHeader, getRequestHeaderValue)
                 .GET()
                 .build();
 
