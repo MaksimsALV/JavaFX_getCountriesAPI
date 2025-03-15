@@ -18,7 +18,7 @@ public class Extractor {
         Path outputPath = Path.of(System.getProperty("user.home"), "IdeaProjects", "JavaFX_getCountriesAPI", "OUTPUT_" + timeStamp + ".txt");
 
         try (BufferedWriter writer = Files.newBufferedWriter(outputPath, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
-                writer.write(String.valueOf(jsonResponse));
+                writer.write(jsonResponse);
 
                 //for output analysis only
                 System.out.println("This is writing result in console:");
