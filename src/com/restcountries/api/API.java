@@ -1,5 +1,7 @@
 package com.restcountries.api;
 
+import com.restcountries.extractor.Extractor;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -23,7 +25,7 @@ public class API {
         try {
             HttpResponse<String> getResponse = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
             String responseBody = getResponse.body();
-            System.out.println(responseBody);
+            Extractor.writeToFile(responseBody);
         } catch (Exception e) {
             e.printStackTrace();
         }
