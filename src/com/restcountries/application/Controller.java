@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import org.json.JSONArray;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,9 +30,6 @@ public class Controller {
 
     @FXML
     private Button getCountryData;
-
-    @FXML
-    private TextArea capitalData;
 
     @FXML
     private TextArea countryData;

@@ -47,9 +47,6 @@ public class API {
         HttpClient httpClient = HttpClient.newHttpClient();
         String countryEndpoint = "https://restcountries.com/v3.1/name/" + selectedCountry;
 
-        //String capitalEndpoint = "https://restcountries.com/v3.1/capital/{capital}"; //todo need to add this later. I want to call country name first -> get capital name from there to UI -> call the capital using name from UI
-        //todo end
-
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(URI.create(countryEndpoint)) //sets url
                 .GET() //sets GET request method
