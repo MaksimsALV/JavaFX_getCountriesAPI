@@ -13,10 +13,10 @@
       <Button fx:id="getCountryData" layoutX="334.0" layoutY="360.0" mnemonicParsing="false" onAction="#getCountryDataClick" text="getCountryData" />
       <Text layoutX="117.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select country from the list and click getCountryData button" />
       <Text layoutX="802.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the data for capital" />
-      <Text layoutX="493.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the data for selected country" />
+      <Text layoutX="493.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the data for selected country" />
       <Button fx:id="getCapitalData" layoutX="681.0" layoutY="360.0" mnemonicParsing="false" text="getCapitalData" />
       <Button fx:id="exportToJSON" layoutX="1120.0" layoutY="188.0" mnemonicParsing="false" text="export to .json" />
-      <TextArea fx:id="countryData" layoutX="493.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextArea fx:id="capitalData" layoutX="802.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="countryData" layoutX="486.0" layoutY="38.0" prefHeight="318.0" prefWidth="307.0" />
+      <TextArea fx:id="capitalData" layoutX="802.0" layoutY="55.0" prefHeight="284.0" prefWidth="288.0" />
    </children>
 </AnchorPane>

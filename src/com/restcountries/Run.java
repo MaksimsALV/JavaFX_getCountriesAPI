@@ -15,8 +15,8 @@ public class Run {
                 Parent root = fxmlLoader.load();
 
                 Stage primaryStage = new Stage();
-                primaryStage.setScene(new Scene(root, 600, 400)); //setting the window size
-                primaryStage.setTitle("Countries API");
+                primaryStage.setScene(new Scene(root, 800, 800)); //setting the window size
+                primaryStage.setTitle("This is definitely not a Postman");
                 primaryStage.show(); //shows the window
             } catch (Exception e) {
                 e.printStackTrace();

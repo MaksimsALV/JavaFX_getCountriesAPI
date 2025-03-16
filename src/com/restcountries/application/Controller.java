@@ -1,6 +1,7 @@
 package com.restcountries.application;
 
 import com.restcountries.api.API;
+import javafx.beans.value.ObservableStringValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -46,7 +47,6 @@ public class Controller {
 
     public void getCountryDataClick() {
         String selectedCountry = countryNameList.getSelectionModel().getSelectedItem();
-        API.getCountryData(selectedCountry);
+        countryData.setText(API.getCountryData(selectedCountry).toString()); //retrieving the data from countryData, setting it as text (needed for textarea field). this is one step that executes getCountryData method too
     }
-
 }
