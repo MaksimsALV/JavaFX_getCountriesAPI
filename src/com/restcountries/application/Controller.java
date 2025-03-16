@@ -1,6 +1,7 @@
 package com.restcountries.application;
 
 import com.restcountries.api.API;
+import com.restcountries.extractor.Extractor;
 import javafx.beans.value.ObservableStringValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.json.JSONArray;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,5 +48,9 @@ public class Controller {
     public void getCountryDataClick() {
         String selectedCountry = countryNameList.getSelectionModel().getSelectedItem();
         countryData.setText(API.getCountryData(selectedCountry).toString()); //retrieving the data from countryData, setting it as text (needed for textarea field). this is one step that executes getCountryData method too
+    }
+
+    public void exportToJSONClick() throws IOException {
+        Extractor.writeToFile(countryData.getText());
     }
 }

@@ -13,7 +13,7 @@
       <Button fx:id="getCountryData" layoutX="334.0" layoutY="360.0" mnemonicParsing="false" onAction="#getCountryDataClick" text="getCountryData" />
       <Text layoutX="117.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select country from the list and click getCountryData button" />
       <Text layoutX="493.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the data for selected country" />
-      <Button fx:id="exportToJSON" layoutX="700.0" layoutY="360.0" mnemonicParsing="false" text="export to .json" />
+      <Button fx:id="exportToJSON" layoutX="700.0" layoutY="360.0" mnemonicParsing="false" onAction="#exportToJSONClick" text="export json" />
       <TextArea fx:id="countryData" layoutX="486.0" layoutY="38.0" prefHeight="318.0" prefWidth="307.0" />
    </children>
 </AnchorPane>
