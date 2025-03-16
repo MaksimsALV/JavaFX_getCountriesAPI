@@ -10,18 +10,20 @@ import java.net.http.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//todo call api to get all countries (https://restcountries.com/v3.1/all), parse only country names as a list, find interested one to do another get, to call another to see cities!
 public class API {
-    public void getRequest() {
+    public static void getRequest() {
         HttpClient httpClient = HttpClient.newHttpClient();
-        String endpointURL = "https://restcountries.com/v3.1/name/Latvia"; //todo variable in country
-        //https://restcountries.com/v3.1/capital/{capital} //todo need to add this later
+        String allCountriesEndpoint = "https://restcountries.com/v3.1/all";
+        String countryEndpoint = "https://restcountries.com/v3.1/name/Latvia"; //todo variable in country
+        //String capitalEndpoint = "https://restcountries.com/v3.1/capital/{capital}" //todo need to add this later. I want to call country name first -> get capital name from there to UI -> call the capital using name from UI
 
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(URI.create(endpointURL))
+                .uri(URI.create(allCountriesEndpoint))
                 .GET()
                 .build();
 
-        try {
+        try { //todo add validation to 200, else error
             HttpResponse<String> getResponse = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
             String responseBody = getResponse.body();
 
@@ -34,7 +36,9 @@ public class API {
                 formatJSON = new JSONObject(responseBody).toString(4);
             }
             String formattedJSON = formatJSON; //additional variable just for readability (because formatJSON does the formatting, but we writeToFile already formattedJSON
-            Extractor.writeToFile(formattedJSON);
+            System.out.println(formattedJSON);
+
+            //todo temporary disabling: Extractor.writeToFile(formattedJSON);
         } catch (Exception e) {
             e.printStackTrace();
         }
