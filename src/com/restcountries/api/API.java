@@ -33,7 +33,7 @@ public class API {
             HttpResponse<String> getResponse = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
             String responseBody = getResponse.body();
 
-            //response parser (extracting only country names in a string using JSON Array format)
+            //response parser (extracting only country names in a string using JSON Array format for next API request. This is better because the list is properly structured as arrayslist)
             JSONArray countriesArray = new JSONArray(responseBody);
                 for (int i = 0; i < countriesArray.length(); i++) { //adding indicator to every country name
                     countryNames.add(countriesArray.getJSONObject(i).getJSONObject("name").getString("common"));

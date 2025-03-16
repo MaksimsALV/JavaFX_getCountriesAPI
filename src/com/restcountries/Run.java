@@ -1,8 +1,6 @@
 package com.restcountries;
 
 
-import com.restcountries.api.API;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +11,7 @@ public class Run {
     public static void main(String[] args) {
         Platform.startup(() -> { //seems that it doesnt work without try/catch block, so had to add that one
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Run.class.getResource("/com/restcountries/JavaFX/window.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(Run.class.getResource("/com/restcountries/application/window.fxml"));
                 Parent root = fxmlLoader.load();
 
                 Stage primaryStage = new Stage();
