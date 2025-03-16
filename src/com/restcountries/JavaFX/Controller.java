@@ -11,7 +11,7 @@ public class Controller {
 
     public void buttonClick() {
         API api = new API();
-        API.getRequest();
+        API.getCountryNames();
     }
 
 }
