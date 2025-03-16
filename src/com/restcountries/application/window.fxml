@@ -2,11 +2,21 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restcountries.application.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1253.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restcountries.application.Controller">
    <children>
-      <Button layoutX="22.0" layoutY="30.0" mnemonicParsing="false" onAction="#buttonClick" text="Try me!" />
+      <Button fx:id="tryMe" layoutX="22.0" layoutY="30.0" mnemonicParsing="false" onAction="#tryMeClick" text="Try me!" />
       <ListView fx:id="countryNameList" layoutX="117.0" layoutY="36.0" prefHeight="324.0" prefWidth="318.0" />
+      <Button fx:id="getCountryData" layoutX="334.0" layoutY="360.0" mnemonicParsing="false" onAction="#getCountryDataClick" text="getCountryData" />
+      <Text layoutX="117.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select country from the list and click getCountryData button" />
+      <Text layoutX="802.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the data for capital" />
+      <Text layoutX="493.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the data for selected country" />
+      <Button fx:id="getCapitalData" layoutX="681.0" layoutY="360.0" mnemonicParsing="false" text="getCapitalData" />
+      <Button fx:id="exportToJSON" layoutX="1120.0" layoutY="188.0" mnemonicParsing="false" text="export to .json" />
+      <TextArea fx:id="countryData" layoutX="493.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="capitalData" layoutX="802.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
