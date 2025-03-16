@@ -24,9 +24,9 @@ public class API {
         //todo end
 
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(URI.create(allCountriesEndpoint))
-                .GET()
-                .build();
+                .uri(URI.create(allCountriesEndpoint)) //sets url
+                .GET() //sets GET request method
+                .build(); //executing the request (mandatory step)
 
         List<String> countryNames = new ArrayList<>();
         try { //todo add validation to 200, else error
@@ -36,7 +36,7 @@ public class API {
             //response parser (extracting only country names in a string using JSON Array format for next API request. This is better because the list is properly structured as arrayslist)
             JSONArray countriesArray = new JSONArray(responseBody);
                 for (int i = 0; i < countriesArray.length(); i++) { //adding indicator to every country name
-                    countryNames.add(countriesArray.getJSONObject(i).getJSONObject("name").getString("common"));
+                    countryNames.add(countriesArray.getJSONObject(i).getJSONObject("name").getString("common")); //exact path what to look at: name.common: value
                 }
             System.out.println(countryNames); //analysis for the output
         } catch (Exception e) {
