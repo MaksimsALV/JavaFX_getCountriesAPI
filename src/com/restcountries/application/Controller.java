@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Controller {
 
@@ -18,9 +19,11 @@ public class Controller {
     private ListView<String> countryNameList;
 
     public void buttonClick() {
-        API api = new API();
         List<String> countries = API.getCountryNames();
-        ObservableList<String> countryNamesList = FXCollections.observableArrayList(countries);
+        List<String> sortByName = countries.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        ObservableList<String> countryNamesList = FXCollections.observableArrayList(sortByName);
         countryNameList.setItems(countryNamesList);
     }
 
